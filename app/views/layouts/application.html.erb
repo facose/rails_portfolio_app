@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Portfolio</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/4ea700da30.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
@@ -11,8 +12,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fabian C</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to 'Welcome', welcome_path, :class => 'btn'%>
+        <%= link_to 'Portfolio', portfolio_path, :class => 'btn' %>
+        <%= link_to 'About', about_path, :class => 'btn' %>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
 
 <%= yield %>
 
+<footer class="text-center mt-3">
+  <i class="fab fa-github-square fa-3x"></i>
+  <i class="fab fa-linkedin fa-3x"></i>
+  <i class="fab fa-twitter-square fa-3x"></i>
+</footer>
 </body>
 </html>
